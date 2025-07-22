@@ -16,5 +16,6 @@ Route::prefix('/')->group(function () {
     Route::get('visualisasi', [dashboardController::class, 'visualisasi'])->name('visualisasi.index');
     Route::get('laporan', [dashboardController::class, 'laporan'])->name('laporan.index');
     Route::get('penggunaan', [dashboardController::class, 'penggunaan'])->name('penggunaan.index');
+    Route::get('pengaturan', [dashboardController::class, 'pengaturan'])->name('pengaturan.index');
     Route::post('logout', [dashboardController::class, 'logout'])->name('logout');
 });

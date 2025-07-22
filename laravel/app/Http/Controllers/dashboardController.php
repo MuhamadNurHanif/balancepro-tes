@@ -44,6 +44,11 @@ class dashboardController extends Controller
         return view('partials.penggunaan.index');
     }
 
+    public function pengaturan()
+    {
+        return view('partials.pengaturan.index');
+    }
+
     public function logout(Request $request)
     {
 

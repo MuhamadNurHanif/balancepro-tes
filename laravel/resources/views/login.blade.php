@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BalancePro - Login</title>
+    <link rel="icon" href="/assets/logo.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -26,14 +27,21 @@
 <body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
     <div class="max-w-6xl w-full bg-white rounded-2xl overflow-hidden custom-shadow flex flex-col md:flex-row">
         <!-- Left Column - Illustration -->
-        <div class="md:w-1/2 bg-gradient-to-br from-blue-50 to-indigo-100 p-8 flex items-center justify-center">
-            <div class="max-w-md text-center">
-                <img src="" alt="" class="w-full h-auto">
+        <div
+            class="md:w-1/2 relative p-8 flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100">
+            <div class="absolute inset-0">
+                <img src="{{ asset('assets/background.png') }}" alt="Background"
+                    class="w-full h-full object-cover opacity-10">
+            </div>
+
+            <!-- Content -->
+            <div class="relative z-10 max-w-md text-center">
                 <h2 class="text-2xl font-bold text-gray-800 mt-6">BalancePro</h2>
                 <p class="text-gray-600 mt-2">Optimalisasi Proses Static Balancing Pada Rotating Equipment dengan
                     Menggunakan Sistem Berbasis Data Analytics</p>
             </div>
         </div>
+
 
         <!-- Right Column - Login Form -->
         <div class="md:w-1/2 p-10 sm:p-12 lg:p-16">

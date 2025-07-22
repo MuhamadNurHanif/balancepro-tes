@@ -88,6 +88,13 @@
                                     'icon' =>
                                         'M12 6c0-1.105-.895-2-2-2H6a2 2 0 00-2 2v12a2 2 0 012 2h4c1.105 0 2-.895 2-2V6zm0 0c0-1.105.895-2 2-2h4a2 2 0 012 2v12a2 2 0 01-2 2h-4c-1.105 0-2-.895-2-2V6z',
                                 ],
+
+                                [
+                                    'label' => 'Pengaturan',
+                                    'route' => 'pengaturan.index',
+                                    'icon' =>
+                                        'M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z',
+                                ],
                             ];
                         @endphp
 
@@ -124,53 +131,35 @@
                             </button>
                         </form>
                     </nav>
+                    <div class="mt-auto border-t border-gray-200 pt-4 px-4">
+                        <div class="flex items-center">
+                            <img class="h-10 w-10 rounded-full object-cover border"
+                                src="{{ asset('assets/hanif.jpeg') }}" alt="User Avatar">
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-800">Hanif</p>
+                                <p class="text-xs text-gray-500">Administrator</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
+        <main class="flex-1 overflow-y-auto bg-gray-50">
+            <div class="flex flex-col min-h-screen px-4 py-6">
+                <div class="flex-1">
+                    @yield('content')
+                </div>
 
-        <!-- Mobile Navigation -->
-        <div class="md:hidden">
-            <div class="flex items-center justify-between h-16 px-4 bg-white border-b border-gray-200">
-                <h1 class="text-lg font-semibold text-gray-800">Admin Panel</h1>
-                <button
-                    class="p-2 rounded-md text-gray-500 hover:text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                {{-- Footer --}}
+                <footer class="bg-white pt-2 pb-4 px-4 border-t mt-16">
+                    <div class="text-center text-gray-500 text-sm mt-0">
+                        © 2025 BalancePro. All rights reserved.
+                    </div>
+                </footer>
             </div>
-            <div class="px-2 py-3 bg-white shadow-md">
-                <nav class="flex space-x-4 overflow-x-auto">
-                    <a href="#"
-                        class="px-3 py-2 text-sm font-medium text-gray-700 whitespace-nowrap rounded-md hover:bg-gray-100">
-                        Input Data
-                    </a>
-                    <a href="#"
-                        class="px-3 py-2 text-sm font-medium text-gray-700 whitespace-nowrap rounded-md hover:bg-gray-100">
-                        Kalkulasi
-                    </a>
-                    <a href="#"
-                        class="px-3 py-2 text-sm font-medium text-blue-600 whitespace-nowrap rounded-md bg-blue-50">
-                        Rekomendasi
-                    </a>
-                    <a href="#"
-                        class="px-3 py-2 text-sm font-medium text-gray-700 whitespace-nowrap rounded-md hover:bg-gray-100">
-                        Visualisasi
-                    </a>
-                    <a href="#"
-                        class="px-3 py-2 text-sm font-medium text-gray-700 whitespace-nowrap rounded-md hover:bg-gray-100">
-                        Logout
-                    </a>
-                </nav>
-            </div>
-        </div>
-
-        <main class="flex-1 overflow-y-auto px-4 py-6 bg-gray-50">
-            @yield('content')
         </main>
+
     </div>
 </body>
 
