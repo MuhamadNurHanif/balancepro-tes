@@ -86,21 +86,6 @@
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm">
                                             <div class="flex justify-center gap-3">
-                                                <a href="#" class="text-white-600 hover:text-white-900"
-                                                    title="View">
-                                                    <i class="fas fa-eye"></i>
-                                                </a>
-                                                <a href="#" class="text-yellow-600 hover:text-yellow-900"
-                                                    title="Back">
-                                                    <i class="fas fa-arrow-left"></i>
-                                                </a>
-                                                <span class="bg-green-500 text-white px-1.5 py-1 rounded" title="Proses">
-                                                    <i class="fas fa-check"></i>
-                                                </span>
-                                                <a href="#" class="text-indigo-600 hover:text-indigo-900"
-                                                    title="Save">
-                                                    <i class="fas fa-save"></i>
-                                                </a>
                                                 <a href="#" class="text-blue-600 hover:text-blue-900" title="Edit">
                                                     <i class="fas fa-edit"></i>
                                                 </a>

@@ -20,7 +20,8 @@ class dashboardController extends Controller
         return view('partials.timbangan.index');
     }
 
-    public function createTimbangan(){
+    public function createTimbangan()
+    {
         return view('partials.timbangan.create');
     }
 
@@ -37,6 +38,10 @@ class dashboardController extends Controller
     public function laporan()
     {
         return view('partials.laporan.index');
+    }
+    public function penggunaan()
+    {
+        return view('partials.penggunaan.index');
     }
 
     public function logout(Request $request)
