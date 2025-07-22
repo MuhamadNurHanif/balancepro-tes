@@ -31,6 +31,23 @@
         .shadow-soft {
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         }
+
+        @media print {
+
+            .no-print,
+            .no-print * {
+                display: none !important;
+            }
+
+            .pdf-container {
+                box-shadow: none !important;
+                border: none !important;
+            }
+        }
+
+          .pdf-container {
+                height: 70vh;
+            }
     </style>
 </head>
 
