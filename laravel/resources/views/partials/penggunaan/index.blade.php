@@ -16,6 +16,13 @@
                 <!-- Main content area -->
                 <main class="flex-1 overflow-y-auto p-6 bg-gray-50">
                     <div class="max-w-6xl mx-auto">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-xl font-semibold text-gray-700">Dokumen PDF</h2>
+                            <a href="https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf" download
+                                class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
+                                Download PDF
+                            </a>
+                        </div>
                         <!-- PDF Viewer -->
                         <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200">
                             <iframe src="https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf"
