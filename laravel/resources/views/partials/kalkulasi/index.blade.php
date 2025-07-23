@@ -227,7 +227,7 @@
                                     </table>
                                 </div>
                                 <div class="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                                    <h4 class="text-md font-semibold text-gray-800 mb-2">Ringkasan Analisis</h4>
+                                    <h4 class="text-md font-semibold text-gray-800 mb-2">Keterangan Analisis</h4>
                                     <ul class="text-sm text-gray-600 list-disc list-inside">
                                         <li><strong>Magnitudo Total:</strong> 0.51 gram – menunjukkan distribusi massa
                                             hampir seimbang.</li>
@@ -302,46 +302,12 @@
                             <div class="bg-white shadow overflow-hidden sm:rounded-lg ">
                                 <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
                                     <h3 class="text-lg font-semibold text-gray-800 mb-4">Visualisasi</h3>
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <div>
-                                            <h4 class="font-medium text-gray-700 mb-2">Detail Unit</h4>
-                                            <div class="space-y-3">
-                                                <div class="flex justify-between border-b border-gray-100 pb-2">
-                                                    <span class="text-gray-500">Tipe Unit</span>
-                                                    <span class="font-medium">Turbin Uap</span>
-                                                </div>
-                                                <div class="flex justify-between border-b border-gray-100 pb-2">
-                                                    <span class="text-gray-500">Kapasitas</span>
-                                                    <span class="font-medium">500 MW</span>
-                                                </div>
-                                                <div class="flex justify-between border-b border-gray-100 pb-2">
-                                                    <span class="text-gray-500">Lokasi</span>
-                                                    <span class="font-medium">PLTU Jawa 1</span>
-                                                </div>
-                                                <div class="flex justify-between border-b border-gray-100 pb-2">
-                                                    <span class="text-gray-500">Tanggal Analisis</span>
-                                                    <span class="font-medium">15 Juni 2023</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-medium text-gray-700 mb-2">Rekomendasi</h4>
-                                            <div class="bg-blue-50 p-4 rounded-lg">
-                                                <p class="text-blue-800">Disarankan untuk menyesuaikan berat pada posisi 3
-                                                    dan 7 untuk
-                                                    mencapai keseimbangan optimal. Perubahan berat yang diperlukan: +1.2kg
-                                                    pada posisi 3
-                                                    dan -0.8kg pada posisi 7.</p>
-                                            </div>
-                                            <div class="mt-4 flex space-x-3">
-                                                <button
-                                                    class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">Terapkan
-                                                    Rekomendasi</button>
-                                                <button
-                                                    class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors">Simpan
-                                                    Laporan</button>
-                                            </div>
-                                        </div>
+                                    <div class="grid gap-6">
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id velit sunt dicta vero
+                                        quasi sint, veniam, provident voluptates placeat deserunt iusto perspiciatis beatae
+                                        non dolore ipsam repellat dolores minima quo. Sit provident distinctio, delectus
+                                        molestias accusantium sapiente consequatur cum iste, autem esse ab modi sequi
+                                        corrupti, est minima soluta dicta!
                                     </div>
                                 </div>
                             </div>

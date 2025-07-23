@@ -33,16 +33,17 @@
     </head>
 
     <body class="bg-gray-50">
-        <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-md overflow-hidden print-container">
+        <div class="max-w-5xl mx-auto rounded-xl overflow-hidden print-container">
             <div class="p-6">
                 <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-2xl font-bold text-gray-800">Manajemen Pengguna</h2>
-                    <button
-                        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center transition-colors">
-                        <i class="fas fa-plus mr-2"></i>
-                        Tambah Pengguna
-                    </button>
+                    <h2 class="text-2xl font-bold text-gray-800">Kelola Data Pengguna</h2>
+
+                    <a href="#"
+                        class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Tambah Data
+                    </a>
                 </div>
+
 
                 <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
                     <!-- Table -->
