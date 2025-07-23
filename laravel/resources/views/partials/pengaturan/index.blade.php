@@ -77,7 +77,7 @@
                                                 <span class="text-blue-600 font-medium">EN</span>
                                             </div>
                                             <div class="ml-4">
-                                                <div class="text-sm font-medium text-gray-900">Engineering</div>
+                                                <div class="text-sm font-medium text-gray-900">John Smith</div>
                                             </div>
                                         </div>
                                     </td>
@@ -110,7 +110,7 @@
                                                 <span class="text-green-600 font-medium">OP</span>
                                             </div>
                                             <div class="ml-4">
-                                                <div class="text-sm font-medium text-gray-900">Operasional</div>
+                                                <div class="text-sm font-medium text-gray-900">Jane Doe</div>
                                             </div>
                                         </div>
                                     </td>
@@ -143,7 +143,7 @@
                                                 <span class="text-purple-600 font-medium">MT</span>
                                             </div>
                                             <div class="ml-4">
-                                                <div class="text-sm font-medium text-gray-900">Maintenance</div>
+                                                <div class="text-sm font-medium text-gray-900">Jimmy</div>
                                             </div>
                                         </div>
                                     </td>

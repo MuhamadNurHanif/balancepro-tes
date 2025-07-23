@@ -166,157 +166,181 @@
                                 </div>
                             </div>
 
-                            <!-- Data Table -->
-                            <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+                            <!-- Hasil Analisis -->
+                            <div class="bg-white shadow overflow-hidden sm:rounded-lg mb-6">
                                 <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
-                                    <h3 class="text-lg leading-6 font-medium text-gray-900">Data Komponen</h3>
-                                    <p class="mt-1 max-w-2xl text-sm text-gray-500">Daftar komponen yang telah diinput
-                                        untuk kalkulasi.</p>
+                                    <h3 class="text-lg leading-6 font-medium text-gray-900">Hasil Analisis Komponen</h3>
+                                    <p class="mt-1 max-w-2xl text-sm text-gray-500">Berikut adalah hasil kalkulasi vektor
+                                        dan penilaian ilmiah dari distribusi massa komponen.</p>
                                 </div>
                                 <div class="overflow-x-auto">
                                     <table class="min-w-full divide-y divide-gray-200">
                                         <thead class="bg-gray-50">
                                             <tr>
-                                                <th scope="col"
+                                                <th
                                                     class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    No ID</th>
-                                                <th scope="col"
+                                                    ID Komponen</th>
+                                                <th
                                                     class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    Berat (kg)</th>
-                                                <th scope="col"
+                                                    Berat (g)</th>
+                                                <th
                                                     class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Sudut (°)</th>
-                                                <th scope="col"
+                                                <th
+                                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    Komponen X</th>
+                                                <th
+                                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    Komponen Y</th>
+                                                <th
                                                     class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Keterangan</th>
-                                                <th scope="col"
-                                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    Status</th>
-                                                <th scope="col" class="relative px-6 py-3"><span
-                                                        class="sr-only">Actions</span></th>
                                             </tr>
                                         </thead>
                                         <tbody class="bg-white divide-y divide-gray-200">
-                                            <tr class="table-row">
+                                            <tr>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                                     KMP-001</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">12.5</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">45</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Komponen
-                                                    Utama</td>
-                                                <td class="px-6 py-4 whitespace-nowrap">
-                                                    <span
-                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Selesai</span>
-                                                </td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                    <a href="#"
-                                                        class="text-blue-600 hover:text-blue-900 mr-3">Edit</a>
-                                                    <a href="#" class="text-red-600 hover:text-red-900">Hapus</a>
-                                                </td>
+                                                <td class="px-6 py-4 text-sm text-gray-500">276.4</td>
+                                                <td class="px-6 py-4 text-sm text-gray-500">0</td>
+                                                <td class="px-6 py-4 text-sm text-gray-500">276.40</td>
+                                                <td class="px-6 py-4 text-sm text-gray-500">0.00</td>
+                                                <td class="px-6 py-4 text-sm text-gray-500">Blabla</td>
                                             </tr>
-                                            <tr class="table-row">
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    KMP-002</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">8.2</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">30</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Komponen
-                                                    Sekunder</td>
-                                                <td class="px-6 py-4 whitespace-nowrap">
-                                                    <span
-                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Selesai</span>
-                                                </td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                    <a href="#"
-                                                        class="text-blue-600 hover:text-blue-900 mr-3">Edit</a>
-                                                    <a href="#" class="text-red-600 hover:text-red-900">Hapus</a>
-                                                </td>
+                                            <tr>
+                                                <td class="px-6 py-4 text-sm font-medium text-gray-900">KMP-002</td>
+                                                <td class="px-6 py-4 text-sm text-gray-500">274.5</td>
+                                                <td class="px-6 py-4 text-sm text-gray-500">30</td>
+                                                <td class="px-6 py-4 text-sm text-gray-500">237.72</td>
+                                                <td class="px-6 py-4 text-sm text-gray-500">137.25</td>
+                                                <td class="px-6 py-4 text-sm text-gray-500">Blabla</td>
                                             </tr>
-                                            <tr class="table-row">
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    KMP-003</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5.7</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">60</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Komponen
-                                                    Tambahan</td>
-                                                <td class="px-6 py-4 whitespace-nowrap">
-                                                    <span
-                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Proses</span>
-                                                </td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                    <a href="#"
-                                                        class="text-blue-600 hover:text-blue-900 mr-3">Edit</a>
-                                                    <a href="#" class="text-red-600 hover:text-red-900">Hapus</a>
-                                                </td>
-                                            </tr>
-                                            <tr class="table-row">
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    KMP-004</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3.1</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">15</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Lainnya</td>
-                                                <td class="px-6 py-4 whitespace-nowrap">
-                                                    <span
-                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">Error</span>
-                                                </td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                    <a href="#"
-                                                        class="text-blue-600 hover:text-blue-900 mr-3">Edit</a>
-                                                    <a href="#" class="text-red-600 hover:text-red-900">Hapus</a>
-                                                </td>
+                                            <tr>
+                                                <td class="px-6 py-4 text-sm font-medium text-gray-900">KMP-003</td>
+                                                <td class="px-6 py-4 text-sm text-gray-500">274.5</td>
+                                                <td class="px-6 py-4 text-sm text-gray-500">60</td>
+                                                <td class="px-6 py-4 text-sm text-gray-500">137.25</td>
+                                                <td class="px-6 py-4 text-sm text-gray-500">237.72</td>
+                                                <td class="px-6 py-4 text-sm text-gray-500">Blabla</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                                <div
-                                    class="bg-gray-50 px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
-                                    <div class="flex-1 flex justify-between sm:hidden">
-                                        <a href="#"
-                                            class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">Previous</a>
-                                        <a href="#"
-                                            class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">Next</a>
-                                    </div>
-                                    <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                                <div class="px-6 py-4 bg-gray-50 border-t border-gray-200">
+                                    <h4 class="text-md font-semibold text-gray-800 mb-2">Ringkasan Analisis</h4>
+                                    <ul class="text-sm text-gray-600 list-disc list-inside">
+                                        <li><strong>Magnitudo Total:</strong> 0.51 gram – menunjukkan distribusi massa
+                                            hampir seimbang.</li>
+                                        <li><strong>Arah Sudut Resultan:</strong> 252° – terjadi ketidakseimbangan kecil di
+                                            kuadran III (barat daya).</li>
+                                        <li><strong>Rekomendasi:</strong> Tambahkan massa kecil ±0.5 g di arah sekitar 72°
+                                            untuk kompensasi.</li>
+                                    </ul>
+
+                                    <h4 class="text-md font-semibold text-gray-800 mt-4 mb-2">Analisis Tambahan
+                                    </h4>
+                                    <ul class="text-sm text-gray-600 list-disc list-inside">
+                                        <li><strong>Stabilitas Rotasi:</strong> Distribusi simetris komponen sangat penting
+                                            untuk meminimalisasi vibrasi mekanis.</li>
+                                        <li><strong>Presisi Dinamis:</strong> Ketidakseimbangan kecil dapat berpengaruh
+                                            besar dalam sistem berputar kecepatan tinggi.</li>
+                                        <li><strong>Energi Tersimpan:</strong> Semakin kecil momen gaya total, semakin
+                                            efisien energi sistem bekerja tanpa redaman tambahan.</li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+
+                            <div class="bg-white shadow overflow-hidden sm:rounded-lg mb-6">
+                                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Informasi Tambahan</h3>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div>
-                                            <p class="text-sm text-gray-700">
-                                                Showing
-                                                <span class="font-medium">1</span>
-                                                to
-                                                <span class="font-medium">4</span>
-                                                of
-                                                <span class="font-medium">12</span>
-                                                results
-                                            </p>
+                                            <h4 class="font-medium text-gray-700 mb-2">Detail Unit</h4>
+                                            <div class="space-y-3">
+                                                <div class="flex justify-between border-b border-gray-100 pb-2">
+                                                    <span class="text-gray-500">Tipe Unit</span>
+                                                    <span class="font-medium">Turbin Uap</span>
+                                                </div>
+                                                <div class="flex justify-between border-b border-gray-100 pb-2">
+                                                    <span class="text-gray-500">Kapasitas</span>
+                                                    <span class="font-medium">500 MW</span>
+                                                </div>
+                                                <div class="flex justify-between border-b border-gray-100 pb-2">
+                                                    <span class="text-gray-500">Lokasi</span>
+                                                    <span class="font-medium">PLTU Jawa 1</span>
+                                                </div>
+                                                <div class="flex justify-between border-b border-gray-100 pb-2">
+                                                    <span class="text-gray-500">Tanggal Analisis</span>
+                                                    <span class="font-medium">15 Juni 2023</span>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div>
-                                            <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
-                                                aria-label="Pagination">
-                                                <a href="#"
-                                                    class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
-                                                    <span class="sr-only">Previous</span>
-                                                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
-                                                        viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                        <path fill-rule="evenodd"
-                                                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                                            clip-rule="evenodd" />
-                                                    </svg>
-                                                </a>
-                                                <a href="#" aria-current="page"
-                                                    class="z-10 bg-blue-50 border-blue-500 text-blue-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">1</a>
-                                                <a href="#"
-                                                    class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">2</a>
-                                                <a href="#"
-                                                    class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">3</a>
-                                                <a href="#"
-                                                    class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
-                                                    <span class="sr-only">Next</span>
-                                                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
-                                                        viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                        <path fill-rule="evenodd"
-                                                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                                            clip-rule="evenodd" />
-                                                    </svg>
-                                                </a>
-                                            </nav>
+                                            <h4 class="font-medium text-gray-700 mb-2">Rekomendasi</h4>
+                                            <div class="bg-blue-50 p-4 rounded-lg">
+                                                <p class="text-blue-800">Disarankan untuk menyesuaikan berat pada posisi 3
+                                                    dan 7 untuk
+                                                    mencapai keseimbangan optimal. Perubahan berat yang diperlukan: +1.2kg
+                                                    pada posisi 3
+                                                    dan -0.8kg pada posisi 7.</p>
+                                            </div>
+                                            <div class="mt-4 flex space-x-3">
+                                                <button
+                                                    class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">Terapkan
+                                                    Rekomendasi</button>
+                                                <button
+                                                    class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors">Simpan
+                                                    Laporan</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white shadow overflow-hidden sm:rounded-lg ">
+                                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Visualisasi</h3>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <h4 class="font-medium text-gray-700 mb-2">Detail Unit</h4>
+                                            <div class="space-y-3">
+                                                <div class="flex justify-between border-b border-gray-100 pb-2">
+                                                    <span class="text-gray-500">Tipe Unit</span>
+                                                    <span class="font-medium">Turbin Uap</span>
+                                                </div>
+                                                <div class="flex justify-between border-b border-gray-100 pb-2">
+                                                    <span class="text-gray-500">Kapasitas</span>
+                                                    <span class="font-medium">500 MW</span>
+                                                </div>
+                                                <div class="flex justify-between border-b border-gray-100 pb-2">
+                                                    <span class="text-gray-500">Lokasi</span>
+                                                    <span class="font-medium">PLTU Jawa 1</span>
+                                                </div>
+                                                <div class="flex justify-between border-b border-gray-100 pb-2">
+                                                    <span class="text-gray-500">Tanggal Analisis</span>
+                                                    <span class="font-medium">15 Juni 2023</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-700 mb-2">Rekomendasi</h4>
+                                            <div class="bg-blue-50 p-4 rounded-lg">
+                                                <p class="text-blue-800">Disarankan untuk menyesuaikan berat pada posisi 3
+                                                    dan 7 untuk
+                                                    mencapai keseimbangan optimal. Perubahan berat yang diperlukan: +1.2kg
+                                                    pada posisi 3
+                                                    dan -0.8kg pada posisi 7.</p>
+                                            </div>
+                                            <div class="mt-4 flex space-x-3">
+                                                <button
+                                                    class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">Terapkan
+                                                    Rekomendasi</button>
+                                                <button
+                                                    class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors">Simpan
+                                                    Laporan</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

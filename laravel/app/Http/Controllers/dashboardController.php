@@ -11,10 +11,24 @@ class dashboardController extends Controller
         return view('dashboard');
     }
 
-    public function komponendata()
-    {
-        return view('partials.komponendata.index');
+    // public function komponendata()
+    // {
+    //     return view('partials.komponendata.index');
+    // }
+
+    public function createKomponen(){
+        return view('partials.komponendata.create');
     }
+
+    public function equipment()
+    {
+        return view('partials.equipment.index');
+    }
+
+    public function createEquipment(){
+        return view('partials.equipment.create');
+    }
+
     public function timbangan()
     {
         return view('partials.timbangan.index');

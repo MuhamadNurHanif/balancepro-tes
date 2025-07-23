@@ -45,9 +45,9 @@
             }
         }
 
-          .pdf-container {
-                height: 70vh;
-            }
+        .pdf-container {
+            height: 70vh;
+        }
     </style>
 </head>
 
@@ -73,39 +73,38 @@
                                     'icon' => 'M3 3h7v7H3V3zm0 11h7v7H3v-7zm11-11h7v7h-7V3zm0 11h7v7h-7v-7z',
                                 ],
                                 [
-                                    'label' => 'Komponen Data',
-                                    'route' => 'component.index',
+                                    'label' => 'Menu Utama',
                                     'icon' => 'M13 10V3L4 14h7v7l9-11h-7z',
+                                    'children' => [
+                                        [
+                                            'label' => 'Equipment',
+                                            'route' => 'equipment.index',
+                                        ],
+                                        [
+                                            'label' => 'Data Timbangan',
+                                            'route' => 'timbangan.index',
+                                        ],
+                                        [
+                                            'label' => 'Data Komponen',
+                                            'route' => 'component.create',
+                                        ],
+                                        [
+                                            'label' => 'Kalkulasi',
+                                            'route' => 'kalkulasi.index',
+                                        ],
+                                        [
+                                            'label' => 'Laporan',
+                                            'route' => 'laporan.index',
+                                        ],
+                                    ],
                                 ],
-                                [
-                                    'label' => 'Data Timbangan',
-                                    'route' => 'timbangan.index',
-                                    'icon' =>
-                                        'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2',
-                                ],
-                                [
-                                    'label' => 'Kalkulasi',
-                                    'route' => 'kalkulasi.index',
-                                    'icon' =>
-                                        'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
-                                ],
-                                [
-                                    'label' => 'Visualisasi',
-                                    'route' => 'visualisasi.index',
-                                    'icon' => 'M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18v4H3V4z',
-                                ],
-                                [
-                                    'label' => 'Laporan',
-                                    'route' => 'laporan.index',
-                                    'icon' => 'M9 12h6m-6 4h6m2 4H7a2 2 0 01-2-2V6a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z',
-                                ],
+
                                 [
                                     'label' => 'Penggunaan Aplikasi',
                                     'route' => 'penggunaan.index',
                                     'icon' =>
                                         'M12 6c0-1.105-.895-2-2-2H6a2 2 0 00-2 2v12a2 2 0 012 2h4c1.105 0 2-.895 2-2V6zm0 0c0-1.105.895-2 2-2h4a2 2 0 012 2v12a2 2 0 01-2 2h-4c-1.105 0-2-.895-2-2V6z',
                                 ],
-
                                 [
                                     'label' => 'Pengaturan',
                                     'route' => 'pengaturan.index',
@@ -117,20 +116,63 @@
 
                         @foreach ($navItems as $item)
                             @php
-                                $isActive = request()->routeIs(Str::before($item['route'], '.') . '*');
+                                $hasChildren = isset($item['children']);
+                                $childActive =
+                                    $hasChildren &&
+                                    collect($item['children'])
+                                        ->pluck('route')
+                                        ->contains(fn($route) => request()->routeIs(Str::before($route, '.') . '*'));
+                                $isActive =
+                                    !$hasChildren &&
+                                    isset($item['route']) &&
+                                    request()->routeIs(Str::before($item['route'], '.') . '*');
                             @endphp
 
-                            <a href="{{ route($item['route']) }}"
-                                class="flex items-center px-4 py-3 text-sm font-medium rounded-md nav-item
-       {{ $isActive ? 'bg-gray-100 text-blue-600' : 'text-gray-700 hover:bg-gray-50' }}">
-                                <svg class="w-5 h-5 mr-3 {{ $isActive ? 'text-blue-500' : 'text-gray-500' }}"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="{{ $item['icon'] }}"></path>
-                                </svg>
-                                {{ $item['label'] }}
-                            </a>
+                            @if ($hasChildren)
+                                <div x-data="{ open: {{ $childActive ? 'true' : 'false' }} }" class="mb-1">
+                                    <button @click="open = !open"
+                                        class="flex items-center justify-between w-full px-4 py-3 text-sm font-medium rounded-md
+                    {{ $childActive ? 'bg-gray-100 text-blue-600' : 'text-gray-700 hover:bg-gray-50' }}">
+                                        <div class="flex items-center">
+                                            <svg class="w-5 h-5 mr-3 {{ $childActive ? 'text-blue-500' : 'text-gray-500' }}"
+                                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="{{ $item['icon'] }}"></path>
+                                            </svg>
+                                            {{ $item['label'] }}
+                                        </div>
+                                        <svg class="w-4 h-4 transform transition-transform duration-200"
+                                            :class="{ 'rotate-90': open }" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </button>
+
+                                    <div x-show="open" class="ml-8 mt-1 space-y-1" x-cloak>
+                                        @foreach ($item['children'] as $child)
+                                            <a href="{{ route($child['route']) }}"
+                                                class="block px-4 py-2 text-sm rounded-md
+                            {{ request()->routeIs(Str::before($child['route'], '.') . '*') ? 'text-blue-600 bg-gray-100 font-semibold' : 'text-gray-600 hover:bg-gray-100' }}">
+                                                {{ $child['label'] }}
+                                            </a>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            @else
+                                <a href="{{ route($item['route']) }}"
+                                    class="flex items-center px-4 py-3 text-sm font-medium rounded-md nav-item
+                                    {{ $isActive ? 'bg-gray-100 text-blue-600' : 'text-gray-700 hover:bg-gray-50' }}">
+                                    <svg class="w-5 h-5 mr-3 {{ $isActive ? 'text-blue-500' : 'text-gray-500' }}"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="{{ $item['icon'] }}"></path>
+                                    </svg>
+                                    {{ $item['label'] }}
+                                </a>
+                            @endif
                         @endforeach
 
                         <!-- Logout -->
@@ -167,13 +209,6 @@
                 <div class="flex-1">
                     @yield('content')
                 </div>
-
-                {{-- Footer --}}
-                <footer class="bg-white pt-2 pb-4 px-4 border-t mt-16">
-                    <div class="text-center text-gray-500 text-sm mt-0">
-                        © 2025 BalancePro. All rights reserved.
-                    </div>
-                </footer>
             </div>
         </main>
 
