@@ -46,11 +46,13 @@
                     <div>
                         <div class="flex justify-between">
                             <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                            <a href="#" class="text-sm text-blue-600 hover:underline">Forgot password?</a>
                         </div>
                         <input id="password" name="password" type="password"
                             class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg input-focus focus:outline-none"
                             placeholder="••••••••" />
+                        <div class="mt-2 text-start">
+                            <a href="#" class="text-sm text-blue-600 hover:underline">Forgot password?</a>
+                        </div>
                     </div>
 
                     <div class="flex items-center">
@@ -61,7 +63,7 @@
                     </div>
                 </form>
 
-                <div class="relative">
+                {{-- <div class="relative">
                     <div class="absolute inset-0 flex items-center">
                         <div class="w-full border-t border-gray-300"></div>
                     </div>
@@ -86,12 +88,16 @@
                                 clip-rule="evenodd" />
                         </svg>
                     </a>
-                </div>
+                </div> --}}
 
                 <p class="text-center text-sm text-gray-600">
                     Don’t have an account?
                     <a href="#" class="text-blue-600 hover:underline">Sign up</a>
                 </p>
+
+                <div class="text-center text-xs text-gray-400 mt-4">
+                    Versi 1.0
+                </div>
             </div>
         </div>
 
