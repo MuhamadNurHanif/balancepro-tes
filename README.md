@@ -9,7 +9,7 @@ Sistem ini dikembangkan untuk mendukung proses **balancing rotating equipment** 
 ## 🚀 Tech Stack
 
 - **Framework**: Laravel 10
-- **Frontend**: Inertia.js + Tailwind CSS
+- **Frontend**: Vue.js , Inertia.js, dan Tailwind CSS
 - **Database**: MySQL
 - **Middleware Auth & Role**: Laravel Breeze / Spatie (opsional)
 
