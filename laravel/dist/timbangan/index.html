@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - BalancePro</title>
+    <link rel="icon" href="/assets/logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nav-item:hover {
+            background-color: #f3f4f6;
+        }
+
+        .nav-item.active {
+            background-color: #e5e7eb;
+            border-left: 3px solid #3b82f6;
+        }
+
+        .table-row:hover {
+            background-color: #f9fafb;
+        }
+
+        .shadow-soft {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        @media print {
+
+            .no-print,
+            .no-print * {
+                display: none !important;
+            }
+
+            .pdf-container {
+                box-shadow: none !important;
+                border: none !important;
+            }
+        }
+
+        .pdf-container {
+            height: 70vh;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar Navigation -->
+        <div class="hidden md:flex md:flex-shrink-0">
+            <div class="flex flex-col w-64 border-r border-gray-200 bg-white">
+                <div class="flex items-center h-16 px-6 border-b border-gray-200">
+                    <img src="http://localhost/assets/logo.png" alt="Logo" class="h-10 w-10 mr-3">
+                    <span class="logo-text text-xl font-bold text-gray-800">BalancePro</span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-4 overflow-y-auto">
+                    <nav class="flex-1 space-y-2">
+                        
+                                                    
+                                                            <a href="http://localhost/dashboard"
+                                    class="flex items-center px-4 py-3 text-sm font-medium rounded-md nav-item
+                                    text-gray-700 hover:bg-gray-50">
+                                    <svg class="w-5 h-5 mr-3 text-gray-500"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 3h7v7H3V3zm0 11h7v7H3v-7zm11-11h7v7h-7V3zm0 11h7v7h-7v-7z"></path>
+                                    </svg>
+                                    Dashboard
+                                </a>
+                                                                                
+                                                            <div x-data="{ open: true }" class="mb-1">
+                                    <button @click="open = !open"
+                                        class="flex items-center justify-between w-full px-4 py-3 text-sm font-medium rounded-md
+                    bg-gray-100 text-blue-600">
+                                        <div class="flex items-center">
+                                            <svg class="w-5 h-5 mr-3 text-blue-500"
+                                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                            </svg>
+                                            Menu Utama
+                                        </div>
+                                        <svg class="w-4 h-4 transform transition-transform duration-200"
+                                            :class="{ 'rotate-90': open }" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </button>
+
+                                    <div x-show="open" class="ml-8 mt-1 space-y-1" x-cloak>
+                                                                                    <a href="http://localhost/equipment"
+                                                class="block px-4 py-2 text-sm rounded-md
+                            text-gray-600 hover:bg-gray-100">
+                                                Equipment
+                                            </a>
+                                                                                    <a href="http://localhost/timbangan"
+                                                class="block px-4 py-2 text-sm rounded-md
+                            text-blue-600 bg-gray-100 font-semibold">
+                                                Data Timbangan
+                                            </a>
+                                                                                    <a href="http://localhost/create/komponendata"
+                                                class="block px-4 py-2 text-sm rounded-md
+                            text-gray-600 hover:bg-gray-100">
+                                                Data Komponen
+                                            </a>
+                                                                                    <a href="http://localhost/kalkulasi"
+                                                class="block px-4 py-2 text-sm rounded-md
+                            text-gray-600 hover:bg-gray-100">
+                                                Kalkulasi
+                                            </a>
+                                                                                    <a href="http://localhost/laporan"
+                                                class="block px-4 py-2 text-sm rounded-md
+                            text-gray-600 hover:bg-gray-100">
+                                                Laporan
+                                            </a>
+                                                                            </div>
+                                </div>
+                                                                                
+                                                            <a href="http://localhost/penggunaan"
+                                    class="flex items-center px-4 py-3 text-sm font-medium rounded-md nav-item
+                                    text-gray-700 hover:bg-gray-50">
+                                    <svg class="w-5 h-5 mr-3 text-gray-500"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 6c0-1.105-.895-2-2-2H6a2 2 0 00-2 2v12a2 2 0 012 2h4c1.105 0 2-.895 2-2V6zm0 0c0-1.105.895-2 2-2h4a2 2 0 012 2v12a2 2 0 01-2 2h-4c-1.105 0-2-.895-2-2V6z"></path>
+                                    </svg>
+                                    Penggunaan Aplikasi
+                                </a>
+                                                                                
+                                                            <a href="http://localhost/pengaturan"
+                                    class="flex items-center px-4 py-3 text-sm font-medium rounded-md nav-item
+                                    text-gray-700 hover:bg-gray-50">
+                                    <svg class="w-5 h-5 mr-3 text-gray-500"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z"></path>
+                                    </svg>
+                                    Pengaturan
+                                </a>
+                                                    
+                        <!-- Logout -->
+                        <form method="POST" action="http://localhost/logout">
+                            <input type="hidden" name="_token" value="vtzIANhwC3Zx9wSea836rU2fKzDmvATWOqwCfmkW" autocomplete="off">                            <button type="submit"
+                                class="w-full text-left flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-md nav-item hover:bg-gray-50">
+                                <svg class="w-5 h-5 mr-3 text-gray-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+                                    </path>
+                                </svg>
+                                Logout
+                            </button>
+                        </form>
+                    </nav>
+                    <div class="mt-auto border-t border-gray-200 pt-4 px-4">
+                        <div class="flex items-center">
+                            <img class="h-10 w-10 rounded-full object-cover border"
+                                src="http://localhost/assets/hanif.jpeg" alt="User Avatar">
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-800">Hanif</p>
+                                <p class="text-xs text-gray-500">Administrator</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main class="flex-1 overflow-y-auto bg-gray-50">
+            <div class="flex flex-col min-h-screen px-4 py-6">
+                <div class="flex-1">
+                        <!-- Main Content -->
+    <div class="flex flex-col flex-1 overflow-hidden">
+        <main class="flex-1 overflow-y-auto p-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800">Kelola Data Timbangan</h2>
+
+                    <a href="http://localhost/create/timbangan"
+                        class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Tambah Data
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-soft overflow-hidden">
+                    <div class="p-4 border-b border-gray-200">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                            <div class="relative max-w-xs mb-4 md:mb-0">
+                                <label for="search" class="sr-only">Search</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                        <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <input type="text" id="search"
+                                        class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                        placeholder="Search">
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div>
+                                    <select
+                                        class="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                                        <option>Filter by Unit</option>
+                                        <option>Unit 1</option>
+                                        <option>Unit 2</option>
+                                        <option>Unit 3</option>
+                                    </select>
+                                </div>
+                                <button
+                                    class="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                    <svg class="-ml-0.5 mr-2 h-4 w-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    Filter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Kode KA
+                                    </th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Sudut
+                                    </th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Aksi
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+
+                                                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                            KA-001
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            45°
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                            <div class="flex justify-center gap-3">
+                                                <a href="#" class="text-blue-600 hover:text-blue-900" title="Edit">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <a href="#" class="text-red-600 hover:text-red-900" title="Delete">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                            KA-002
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            30°
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                            <div class="flex justify-center gap-3">
+                                                <a href="#" class="text-blue-600 hover:text-blue-900" title="Edit">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <a href="#" class="text-red-600 hover:text-red-900" title="Delete">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                            KA-003
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            60°
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                            <div class="flex justify-center gap-3">
+                                                <a href="#" class="text-blue-600 hover:text-blue-900" title="Edit">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <a href="#" class="text-red-600 hover:text-red-900" title="Delete">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                                                    <tr class="table-row">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                            KA-004
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            75°
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                            <div class="flex justify-center gap-3">
+                                                <a href="#" class="text-blue-600 hover:text-blue-900" title="Edit">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <a href="#" class="text-red-600 hover:text-red-900" title="Delete">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+                        <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                            <div>
+                                <p class="text-sm text-gray-700">
+                                    Showing
+                                    <span class="font-medium">1</span>
+                                    to
+                                    <span class="font-medium">4</span>
+                                    of
+                                    <span class="font-medium">12</span>
+                                    results
+                                </p>
+                            </div>
+                            <div>
+                                <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
+                                    aria-label="Pagination">
+                                    <a href="#"
+                                        class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                        <span class="sr-only">Previous</span>
+                                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                            fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" aria-current="page"
+                                        class="z-10 bg-blue-50 border-blue-500 text-blue-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                        1
+                                    </a>
+                                    <a href="#"
+                                        class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                        2
+                                    </a>
+                                    <a href="#"
+                                        class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                        3
+                                    </a>
+                                    <a href="#"
+                                        class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                        <span class="sr-only">Next</span>
+                                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                            fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+</body>
+
+</html>
