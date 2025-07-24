@@ -17,27 +17,27 @@ Sistem ini dikembangkan untuk mendukung proses **balancing rotating equipment** 
 
 ## 👥 Role Pengguna
 
-| Role         | Deskripsi Singkat                                                                 |
-|--------------|------------------------------------------------------------------------------------|
-| Operational  | Input dan validasi data timbangan serta melakukan kalkulasi sederhana              |
-| Maintenance  | Pemantauan data komponen serta rekap laporan hasil balancing                       |
-| Engineering  | Analisis hasil kalkulasi, visualisasi momen, dan pengambilan keputusan akhir       |
+| Role        | Deskripsi Singkat                                                            |
+| ----------- | ---------------------------------------------------------------------------- |
+| Operational | Input dan validasi data timbangan serta melakukan kalkulasi sederhana        |
+| Maintenance | Pemantauan data komponen serta rekap laporan hasil balancing                 |
+| Engineering | Analisis hasil kalkulasi, visualisasi momen, dan pengambilan keputusan akhir |
 
 ---
 
 ## 📂 Menu Utama Aplikasi
 
-| Menu                    | Fitur                                                                 |
-|-------------------------|-----------------------------------------------------------------------|
-| 🛠️ Equipment            | Manajemen data mesin dan rotating equipment                            |
-| ⚖️ Timbangan            | Input data hasil pengukuran (massa & posisi)                           |
-| 🧩 Komponen Data        | Input data komponen seperti poros, beban, serta identifikasi titik     |
-| 🧮 Kalkulasi             | - **Hasil Analisis Komponen** (Mx, My, Resultan)                      |
-|                         | - **Informasi Tambahan** (sudut koreksi, beban tambahan)              |
-|                         | - **Visualisasi** (grafik distribusi momen & vektor resultan)         |
-| 📄 Laporan              | Rekap hasil balancing dan ekspor PDF                                  |
-| 📘 Petunjuk Penggunaan  | Panduan interaktif untuk menggunakan aplikasi                         |
-| 🔐 Logout               | Keluar dari aplikasi dengan aman                                      |
+| Menu                   | Fitur                                                              |
+| ---------------------- | ------------------------------------------------------------------ |
+| 🛠️ Equipment           | Manajemen data mesin dan rotating equipment                        |
+| ⚖️ Timbangan           | Input data hasil pengukuran (massa & posisi)                       |
+| 🧩 Komponen Data       | Input data komponen seperti poros, beban, serta identifikasi titik |
+| 🧮 Kalkulasi           | - **Hasil Analisis Komponen** (Mx, My, Resultan)                   |
+|                        | - **Informasi Tambahan** (sudut koreksi, beban tambahan)           |
+|                        | - **Visualisasi** (grafik distribusi momen & vektor resultan)      |
+| 📄 Laporan             | Rekap hasil balancing dan ekspor PDF                               |
+| 📘 Petunjuk Penggunaan | Panduan interaktif untuk menggunakan aplikasi                      |
+| 🔐 Logout              | Keluar dari aplikasi dengan aman                                   |
 
 ---
 
@@ -64,5 +64,7 @@ php artisan migrate --seed
 
 # 6. Jalankan aplikasi
 php artisan serve
+
+```
 
 © 2025 - BalancePro & Tim Pengembang.
