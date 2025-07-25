@@ -77,15 +77,15 @@
                                     'icon' => 'M13 10V3L4 14h7v7l9-11h-7z',
                                     'children' => [
                                         [
-                                            'label' => 'Equipment',
+                                            'label' => 'Peralatan',
                                             'route' => 'equipment.index',
                                         ],
                                         [
-                                            'label' => 'Data Timbangan',
+                                            'label' => 'Timbangan',
                                             'route' => 'timbangan.index',
                                         ],
                                         [
-                                            'label' => 'Data Komponen',
+                                            'label' => 'Komponen',
                                             'route' => 'component.create',
                                         ],
                                         [
